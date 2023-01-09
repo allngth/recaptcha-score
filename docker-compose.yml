@@ -1,0 +1,11 @@
+services:
+  php:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      GOOGLE_CLOUD_API_KEY: ${GOOGLE_CLOUD_API_KEY:?err}
+      GOOGLE_CLOUD_PROJECT_ID: ${GOOGLE_CLOUD_PROJECT_ID:?err}
+      RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY:?err}
